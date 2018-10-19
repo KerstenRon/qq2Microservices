@@ -1,0 +1,227 @@
+{
+	"info": {
+		"_postman_id": "83d306c4-5583-4c61-bc0d-6b10734e25ce",
+		"name": "QQ2-Skript",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/students",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "13694658-ad64-4bee-9553-36d30476a362",
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([201,202]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstName\": \"Horst\" ,\n\t\"lastName\": \"Dieter\",\n\t\"matriculationNumber\": 11097002,\n\t\"course\": \"MI\",\n\t\"semester\": 11,\n\t\"email\": \"ron.kersten@testmail.com\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/students",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/students?id=1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c848ed41-36ce-4e0f-b49a-bd6a9e8a08d5",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"vorname\"  : \"\",\n\t\"nachname\"  : \"\",\n\t\"matrikelnummer\"  : \"\",\n\t\"studiengang\"  : \"\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/students?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"students"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/students/?id=1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c6d633e0-8560-4f43-b210-31a726b3998c",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstName\" :\"Jon\" ,\n\t\"lastName\" :\"Doe\",\n\t\"matriculationNumber\" :13370000,\n\t\"course\" :\"AI\",\n\t\"semester\" : 1337,\n\t\"email\" :\"jon.doe@testmail.com\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/students?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"students"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/students/id?=1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bf8e4ad5-3598-43e2-ad49-29b55f6de624",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/students?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"students"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/students",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a39c1718-e65c-4c86-b7dd-5604069d394a",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/students",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"students"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
